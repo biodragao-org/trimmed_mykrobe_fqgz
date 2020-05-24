@@ -15,7 +15,7 @@ Channel.fromFilePairs("./*_{R1,R2}.p.fastq.gz")
 
 /*
 #==============================================
-# prokka
+# mykrobe
 #==============================================
 */
 
@@ -23,7 +23,6 @@ Channel.fromFilePairs("./*_{R1,R2}.p.fastq.gz")
 process mykrobe {
    container 'quay.io/biocontainers/mykrobe:0.8.1--py37ha80c686_0'
    publishDir 'results/mykrobe'
-   echo true
 
    input:
    set genomeFileName, file(genomeReads) from ch_in_mykrobe
